@@ -21,7 +21,6 @@ function renderTodoList() {
     const newTodo   = document.createElement("tr");
     const tdFirst   = document.createElement('td')
     const tdSecond  = document.createElement('td')
-    const nbsp      = document.createTextNode('\u00A0')
 
     tdFirst.innerText = todo.text.toUpperCase();
     if (todo.completed) {
@@ -35,7 +34,7 @@ function renderTodoList() {
       const iconCheck = document.createElement("i")
             iconCheck.classList.add("glyphicon", "glyphicon-ok")
       completeButton.classList.add("btn", "btn-sm", "btn-success")
-      
+      const nbsp      = document.createTextNode('\u00A0')
       completeButton.append(iconCheck, nbsp,"Komplit")
       completeButton.addEventListener("click", function() {
         completeTodo(index);
@@ -48,7 +47,7 @@ function renderTodoList() {
     const iconDelete = document.createElement("i")
           iconDelete.classList.add("glyphicon", "glyphicon-remove")
     deleteButton.classList.add("btn", "btn-sm", "btn-danger");
-
+    const nbsp      = document.createTextNode('\u00A0')
     deleteButton.append(iconDelete, nbsp,"Hapus")
     deleteButton.addEventListener("click", function() {
       deleteTodo(index);
