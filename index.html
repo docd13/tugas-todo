@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tugas ToDo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>ToDo</h1>
+    <p>membuat todo | surabaya camp</p>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <!-- start of list area -->
+        <ul id="todo-list" class="list-group">
+      
+        </ul>
+        <!-- end of list area -->
+        <div class="col-md-8">
+          <input type="text" class="form-control" placeholder="Do something" id="todo-input" />
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-sm" id="add-todo">
+            <i class="glyphicon glyphicon-plus"></i>&nbsp;
+            Tambah
+          </button>
+          <button class="btn btn-warning btn-sm" id="reset-todo">
+              <i class="glyphicon glyphicon-refresh"></i>&nbsp;
+              Ulangi
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- start of input area -->
+    <!-- end of input area -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
