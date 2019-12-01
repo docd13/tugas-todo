@@ -1,7 +1,6 @@
 const defaultTodos = [
-  { text: "not complete", completed: false },
-  { text: "not complete", completed: false },
-  { text: "complete", completed: true }
+  { text: "belum complete", completed: false },
+  { text: "komplit", completed: true }
 ];
 
 const todos = [...(JSON.parse(localStorage.getItem("todos")) || defaultTodos)];
