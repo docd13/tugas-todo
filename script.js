@@ -1,5 +1,5 @@
 const defaultTodos = [
-  { text: "belum complete", completed: false },
+  { text: "belum komplit", completed: false },
   { text: "komplit", completed: true }
 ];
 
