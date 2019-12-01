@@ -18,24 +18,30 @@ const elements = {
 function renderTodoList() {
   elements.todoList.innerHTML = null;
   todos.forEach(function(todo, index) {
-    const newTodo = document.createElement("li");
-    newTodo.innerText = todo.text.toUpperCase();
-    newTodo.classList.add("list-group-item")
+    const newTodo   = document.createElement("tr");
+    const tdFirst   = document.createElement('td')
+    const tdSecond  = document.createElement('td')
+    const nbsp      = document.createTextNode('\u00A0')
+
+    tdFirst.innerText = todo.text.toUpperCase();
     if (todo.completed) {
-      newTodo.classList.add("done");
+      // tdFirst.classList.add("complete")
+      const label = document.createElement('span')
+            label.classList.add("label", "label-success")
+            label.innerHTML = "<i class='glyphicon glyphicon-ok'></i>"
+      tdFirst.append(" ", label)
     } else {
       const completeButton = document.createElement("button")
       const iconCheck = document.createElement("i")
             iconCheck.classList.add("glyphicon", "glyphicon-ok")
       completeButton.classList.add("btn", "btn-sm", "btn-success")
       
-      const nbsp = document.createTextNode('\u00A0')
-      completeButton.append(iconCheck, nbsp,"Mark as Complete")
+      completeButton.append(iconCheck, nbsp,"Komplit")
       completeButton.addEventListener("click", function() {
         completeTodo(index);
       });
       
-      newTodo.append(" | ", completeButton)
+      tdSecond.append(completeButton, " | ")
     }
 
     const deleteButton = document.createElement("button");
@@ -43,13 +49,13 @@ function renderTodoList() {
           iconDelete.classList.add("glyphicon", "glyphicon-remove")
     deleteButton.classList.add("btn", "btn-sm", "btn-danger");
 
-    const nbsp = document.createTextNode('\u00A0')
-    deleteButton.append(iconDelete, nbsp,"Delete")
+    deleteButton.append(iconDelete, nbsp,"Hapus")
     deleteButton.addEventListener("click", function() {
       deleteTodo(index);
     });
 
-    newTodo.append(" | ", deleteButton);
+    tdSecond.append(deleteButton);
+    newTodo.append(tdFirst, tdSecond);
     elements.todoList.appendChild(newTodo);
   });
 }
@@ -72,6 +78,7 @@ function addTodo() {
 function completeTodo(index) {
   todos[index].completed = true;
   localStorage.setItem("todos", JSON.stringify(todos));
+
   renderTodoList();
 }
 

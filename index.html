@@ -15,23 +15,36 @@
     <div class="row">
       <div class="col-lg-6">
         <!-- start of list area -->
-        <ul id="todo-list" class="list-group">
+        <!-- <ul id="todo-list" class="list-group">
       
-        </ul>
+        </ul> -->
+        <div class="row">
+            <div class="col-md-8">
+              <input type="text" class="form-control" placeholder="Ketik sesuatu" id="todo-input" />
+            </div>
+            <div class="col-md-4" style="text-align: right;">
+              <button class="btn btn-primary btn-sm" id="add-todo">
+                <i class="glyphicon glyphicon-plus"></i>&nbsp;
+                Tambah
+              </button>
+              <button class="btn btn-warning btn-sm" id="reset-todo">
+                  <i class="glyphicon glyphicon-refresh"></i>&nbsp;
+                  Ulangi
+              </button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="todo-list">
+
+            </tbody>
+        </table>
         <!-- end of list area -->
-        <div class="col-md-8">
-          <input type="text" class="form-control" placeholder="Do something" id="todo-input" />
-        </div>
-        <div class="col-md-4">
-          <button class="btn btn-primary btn-sm" id="add-todo">
-            <i class="glyphicon glyphicon-plus"></i>&nbsp;
-            Tambah
-          </button>
-          <button class="btn btn-warning btn-sm" id="reset-todo">
-              <i class="glyphicon glyphicon-refresh"></i>&nbsp;
-              Ulangi
-          </button>
-        </div>
       </div>
     </div>
     <!-- start of input area -->
